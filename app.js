@@ -325,12 +325,45 @@ const meguriSeeds = [
 ];
 
 const choices = [
-  { value: 1, label: "❶", text: "10％以下" },
-  { value: 2, label: "❷", text: "10〜30％未満" },
-  { value: 3, label: "❸", text: "30〜50％未満" },
-  { value: 4, label: "❹", text: "50〜70％未満" },
-  { value: 5, label: "❺", text: "70％以上" }
+  {
+    value: 1,
+    label: "❶",
+    text: "10％以下"
+  },
+  {
+    value: 2,
+    label: "❷",
+    text: "10〜30％未満"
+  },
+  {
+    value: 3,
+    label: "❸",
+    text: "30〜50％未満"
+  },
+  {
+    value: 4,
+    label: "❹",
+    text: "50〜70％未満"
+  },
+  {
+    value: 5,
+    label: "❺",
+    text: "70％以上"
+  }
 ];
+
+const meguriImageNumbers = {
+  i: "01",
+  ro: "02",
+  ha: "03",
+  ni: "04",
+  ho: "05",
+  he: "06",
+  to: "07",
+  chi: "08",
+  ri: "09",
+  nu: "10"
+};
 
 let currentPhase = "material";
 let currentSeedIndex = 0;
@@ -343,22 +376,47 @@ const meguriAnswers = meguriSeeds.map((seed) =>
   Array(seed.items.length).fill(null)
 );
 
-const startScreen = document.getElementById("start-screen");
-const checkScreen = document.getElementById("check-screen");
-const resultScreen = document.getElementById("result-screen");
+const startScreen =
+  document.getElementById("start-screen");
 
-const startButton = document.getElementById("start-button");
-const backButton = document.getElementById("back-button");
-const nextButton = document.getElementById("next-button");
-const restartButton = document.getElementById("restart-button");
+const checkScreen =
+  document.getElementById("check-screen");
 
-const seedNumber = document.getElementById("seed-number");
-const seedTitle = document.getElementById("seed-title");
-const progressText = document.getElementById("progress-text");
-const progressFill = document.getElementById("progress-fill");
-const questions = document.getElementById("questions");
-const errorMessage = document.getElementById("error-message");
-const resultContent = document.getElementById("result-content");
+const resultScreen =
+  document.getElementById("result-screen");
+
+const startButton =
+  document.getElementById("start-button");
+
+const backButton =
+  document.getElementById("back-button");
+
+const nextButton =
+  document.getElementById("next-button");
+
+const restartButton =
+  document.getElementById("restart-button");
+
+const seedNumber =
+  document.getElementById("seed-number");
+
+const seedTitle =
+  document.getElementById("seed-title");
+
+const progressText =
+  document.getElementById("progress-text");
+
+const progressFill =
+  document.getElementById("progress-fill");
+
+const questions =
+  document.getElementById("questions");
+
+const errorMessage =
+  document.getElementById("error-message");
+
+const resultContent =
+  document.getElementById("result-content");
 
 function getCurrentSeeds() {
   return currentPhase === "material"
@@ -373,12 +431,18 @@ function getCurrentAnswers() {
 }
 
 function showScreen(screen) {
-  document.querySelectorAll(".screen").forEach((item) => {
-    item.classList.remove("active");
-  });
+  document
+    .querySelectorAll(".screen")
+    .forEach((item) => {
+      item.classList.remove("active");
+    });
 
   screen.classList.add("active");
-  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 function renderSeed() {
@@ -404,136 +468,257 @@ function renderSeed() {
     `${((currentSeedIndex + 1) / seeds.length) * 100}%`;
 
   backButton.style.visibility =
-    currentSeedIndex === 0 && currentPhase === "material"
+    currentSeedIndex === 0 &&
+    currentPhase === "material"
       ? "hidden"
       : "visible";
 
   const isLastSeed =
     currentSeedIndex === seeds.length - 1;
 
-  if (currentPhase === "material" && isLastSeed) {
-    nextButton.textContent = "巡りのチェックへ";
-  } else if (currentPhase === "meguri" && isLastSeed) {
-    nextButton.textContent = "結果を見る";
+  if (
+    currentPhase === "material" &&
+    isLastSeed
+  ) {
+    nextButton.textContent =
+      "巡りのチェックへ";
+  } else if (
+    currentPhase === "meguri" &&
+    isLastSeed
+  ) {
+    nextButton.textContent =
+      "結果を見る";
   } else {
-    nextButton.textContent = "次へ";
+    nextButton.textContent =
+      "次へ";
   }
 
   questions.innerHTML = "";
   errorMessage.textContent = "";
 
-  seed.items.forEach((item, questionIndex) => {
-    const card = document.createElement("div");
-    card.className = "question-card";
+  seed.items.forEach(
+    (item, questionIndex) => {
+      const card =
+        document.createElement("div");
 
-    const title = document.createElement("p");
-    title.className = "question-title";
-    title.textContent = item;
+      card.className =
+        "question-card";
 
-    const choiceGroup = document.createElement("div");
-    choiceGroup.className = "choice-group";
+      const title =
+        document.createElement("p");
 
-    choices.forEach((choice) => {
-      const label = document.createElement("label");
+      title.className =
+        "question-title";
 
-      const input = document.createElement("input");
-      input.type = "radio";
-      input.name =
-        `${currentPhase}-${currentSeedIndex}-${questionIndex}`;
-      input.value = choice.value;
+      title.textContent =
+        item;
 
-      input.checked =
-        answers[currentSeedIndex][questionIndex] ===
-        choice.value;
+      const choiceGroup =
+        document.createElement("div");
 
-      input.addEventListener("change", () => {
-        answers[currentSeedIndex][questionIndex] =
+      choiceGroup.className =
+        "choice-group";
+
+      choices.forEach((choice) => {
+        const label =
+          document.createElement("label");
+
+        const input =
+          document.createElement("input");
+
+        input.type =
+          "radio";
+
+        input.name =
+          `${currentPhase}-${currentSeedIndex}-${questionIndex}`;
+
+        input.value =
           choice.value;
 
-        errorMessage.textContent = "";
+        input.checked =
+          answers[currentSeedIndex][questionIndex] ===
+          choice.value;
+
+        input.addEventListener(
+          "change",
+          () => {
+            answers[currentSeedIndex][questionIndex] =
+              choice.value;
+
+            errorMessage.textContent =
+              "";
+          }
+        );
+
+        const symbol =
+          document.createElement("span");
+
+        symbol.textContent =
+          choice.label;
+
+        const text =
+          document.createElement("small");
+
+        text.textContent =
+          choice.text;
+
+        label.appendChild(input);
+        label.appendChild(symbol);
+        label.appendChild(text);
+
+        choiceGroup.appendChild(label);
       });
 
-      const symbol = document.createElement("span");
-      symbol.textContent = choice.label;
+      card.appendChild(title);
+      card.appendChild(choiceGroup);
 
-      const text = document.createElement("small");
-      text.textContent = choice.text;
-
-      label.appendChild(input);
-      label.appendChild(symbol);
-      label.appendChild(text);
-      choiceGroup.appendChild(label);
-    });
-
-    card.appendChild(title);
-    card.appendChild(choiceGroup);
-    questions.appendChild(card);
-  });
+      questions.appendChild(card);
+    }
+  );
 }
 
 function isCurrentSeedComplete() {
-  const answers = getCurrentAnswers();
+  const answers =
+    getCurrentAnswers();
 
   return answers[currentSeedIndex].every(
     (answer) => answer !== null
   );
 }
 
-function calculateResults(seeds, answers) {
-  return seeds.map((seed, index) => {
-    const count4 = answers[index].filter(
-      (answer) => answer === 4
-    ).length;
+function calculateResults(
+  seeds,
+  answers
+) {
+  return seeds.map(
+    (seed, index) => {
+      const count4 =
+        answers[index].filter(
+          (answer) =>
+            answer === 4
+        ).length;
 
-    const count5 = answers[index].filter(
-      (answer) => answer === 5
-    ).length;
+      const count5 =
+        answers[index].filter(
+          (answer) =>
+            answer === 5
+        ).length;
 
-    return {
-      ...seed,
-      count4,
-      count5,
-      total: count4 + count5
-    };
-  });
+      return {
+        ...seed,
+        count4,
+        count5,
+        total: count4 + count5
+      };
+    }
+  );
 }
 
 function getWinningSeeds(results) {
-  const highestTotal = Math.max(
-    ...results.map((result) => result.total)
-  );
+  const highestTotal =
+    Math.max(
+      ...results.map(
+        (result) =>
+          result.total
+      )
+    );
 
-  const totalWinners = results.filter(
-    (result) => result.total === highestTotal
-  );
+  const totalWinners =
+    results.filter(
+      (result) =>
+        result.total ===
+        highestTotal
+    );
 
-  const highestCount5 = Math.max(
-    ...totalWinners.map((result) => result.count5)
-  );
+  const highestCount5 =
+    Math.max(
+      ...totalWinners.map(
+        (result) =>
+          result.count5
+      )
+    );
 
   return totalWinners.filter(
-    (result) => result.count5 === highestCount5
+    (result) =>
+      result.count5 ===
+      highestCount5
   );
 }
 
-function makeWinnerCards(winners, typeLabel) {
+function getCardImagePath(
+  winner,
+  type
+) {
+  if (type === "material") {
+    const number =
+      String(winner.key)
+        .padStart(2, "0");
+
+    return `images/jyuunin-${number}.png`;
+  }
+
+  const number =
+    meguriImageNumbers[winner.key];
+
+  return `images/meguri-${number}.png`;
+}
+
+function makeWinnerCards(
+  winners,
+  type,
+  typeLabel
+) {
   let html = "";
 
   winners.forEach((winner) => {
+    const imagePath =
+      getCardImagePath(
+        winner,
+        type
+      );
+
     html += `
-      <div class="result-card">
-        <p>${typeLabel}</p>
+      <article class="result-card">
+
+        <p class="result-label">
+          ${typeLabel}
+        </p>
+
         <h3>
-          ${winner.icon}
+          ${winner.number}
           ${winner.title}
         </h3>
-        <p>❹の数：${winner.count4}</p>
-        <p>❺の数：${winner.count5}</p>
-        <p>
-          ❹と❺の合計：
-          ${winner.total}
-        </p>
-      </div>
+
+        <img
+          class="result-card-image"
+          src="${imagePath}"
+          alt="${winner.title}のカード"
+        >
+
+        <details class="score-details">
+
+          <summary>
+            集計を見る
+          </summary>
+
+          <p>
+            ❹の数：
+            ${winner.count4}
+          </p>
+
+          <p>
+            ❺の数：
+            ${winner.count5}
+          </p>
+
+          <p>
+            ❹と❺の合計：
+            ${winner.total}
+          </p>
+
+        </details>
+
+      </article>
     `;
   });
 
@@ -559,21 +744,27 @@ function makeWinnerCards(winners, typeLabel) {
 }
 
 function showResults() {
-  const materialResults = calculateResults(
-    materialSeeds,
-    materialAnswers
-  );
+  const materialResults =
+    calculateResults(
+      materialSeeds,
+      materialAnswers
+    );
 
-  const meguriResults = calculateResults(
-    meguriSeeds,
-    meguriAnswers
-  );
+  const meguriResults =
+    calculateResults(
+      meguriSeeds,
+      meguriAnswers
+    );
 
   const materialWinners =
-    getWinningSeeds(materialResults);
+    getWinningSeeds(
+      materialResults
+    );
 
   const meguriWinners =
-    getWinningSeeds(meguriResults);
+    getWinningSeeds(
+      meguriResults
+    );
 
   const resultHeading =
     resultScreen.querySelector("h2");
@@ -583,135 +774,167 @@ function showResults() {
       "🌱 今の巡りあわせ";
   }
 
-  let html = `
+  resultContent.innerHTML = `
     <section class="result-section">
-      <h2>🌳 素材のタネ</h2>
+
+      <h2>
+        🌳 今の住人
+      </h2>
+
       ${makeWinnerCards(
         materialWinners,
-        "今出やすい素材"
+        "material",
+        "今出やすい素材のタネ"
       )}
+
     </section>
 
-    <div
-      style="
-        text-align:center;
-        font-size:32px;
-        margin:24px 0;
-      "
-    >
+    <div class="result-cross">
       ×
     </div>
 
     <section class="result-section">
-      <h2>🪽 巡りのタネ</h2>
+
+      <h2>
+        🪽 今の巡り屋
+      </h2>
+
       ${makeWinnerCards(
         meguriWinners,
-        "今出やすい巡り"
+        "meguri",
+        "今出やすい巡りのタネ"
       )}
+
     </section>
 
-    <p
-      style="
-        text-align:center;
-        line-height:1.8;
-        margin-top:28px;
-      "
-    >
+    <p class="result-footer">
       今日のあなたの<br>
       ねっこを知るヒントにしてね🌱
     </p>
   `;
 
-  resultContent.innerHTML = html;
   showScreen(resultScreen);
 }
 
-startButton.addEventListener("click", () => {
-  currentPhase = "material";
-  currentSeedIndex = 0;
-
-  renderSeed();
-  showScreen(checkScreen);
-});
-
-backButton.addEventListener("click", () => {
-  if (currentSeedIndex > 0) {
-    currentSeedIndex -= 1;
-    renderSeed();
-    return;
-  }
-
-  if (
-    currentPhase === "meguri" &&
-    currentSeedIndex === 0
-  ) {
+startButton.addEventListener(
+  "click",
+  () => {
     currentPhase = "material";
-    currentSeedIndex =
-      materialSeeds.length - 1;
-
-    renderSeed();
-  }
-});
-
-nextButton.addEventListener("click", () => {
-  if (!isCurrentSeedComplete()) {
-    errorMessage.textContent =
-      "すべての項目を選んでから進んでね🌱";
-    return;
-  }
-
-  const seeds = getCurrentSeeds();
-  const isLastSeed =
-    currentSeedIndex === seeds.length - 1;
-
-  if (!isLastSeed) {
-    currentSeedIndex += 1;
-    renderSeed();
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-
-    return;
-  }
-
-  if (currentPhase === "material") {
-    currentPhase = "meguri";
     currentSeedIndex = 0;
 
     renderSeed();
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-
-    return;
+    showScreen(checkScreen);
   }
+);
 
-  showResults();
-});
+backButton.addEventListener(
+  "click",
+  () => {
+    if (currentSeedIndex > 0) {
+      currentSeedIndex -= 1;
 
-restartButton.addEventListener("click", () => {
-  materialAnswers.forEach((seedAnswers) => {
-    seedAnswers.fill(null);
-  });
+      renderSeed();
 
-  meguriAnswers.forEach((seedAnswers) => {
-    seedAnswers.fill(null);
-  });
+      return;
+    }
 
-  currentPhase = "material";
-  currentSeedIndex = 0;
+    if (
+      currentPhase === "meguri" &&
+      currentSeedIndex === 0
+    ) {
+      currentPhase =
+        "material";
 
-  const resultHeading =
-    resultScreen.querySelector("h2");
+      currentSeedIndex =
+        materialSeeds.length - 1;
 
-  if (resultHeading) {
-    resultHeading.textContent =
-      "🌱 今出やすい素材のタネ";
+      renderSeed();
+    }
   }
+);
 
-  showScreen(startScreen);
-});
+nextButton.addEventListener(
+  "click",
+  () => {
+    if (!isCurrentSeedComplete()) {
+      errorMessage.textContent =
+        "すべての項目を選んでから進んでね🌱";
+
+      return;
+    }
+
+    const seeds =
+      getCurrentSeeds();
+
+    const isLastSeed =
+      currentSeedIndex ===
+      seeds.length - 1;
+
+    if (!isLastSeed) {
+      currentSeedIndex += 1;
+
+      renderSeed();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+      return;
+    }
+
+    if (
+      currentPhase === "material"
+    ) {
+      currentPhase =
+        "meguri";
+
+      currentSeedIndex =
+        0;
+
+      renderSeed();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+      return;
+    }
+
+    showResults();
+  }
+);
+
+restartButton.addEventListener(
+  "click",
+  () => {
+    materialAnswers.forEach(
+      (seedAnswers) => {
+        seedAnswers.fill(null);
+      }
+    );
+
+    meguriAnswers.forEach(
+      (seedAnswers) => {
+        seedAnswers.fill(null);
+      }
+    );
+
+    currentPhase =
+      "material";
+
+    currentSeedIndex =
+      0;
+
+    const resultHeading =
+      resultScreen.querySelector("h2");
+
+    if (resultHeading) {
+      resultHeading.textContent =
+        "🌱 今出やすい素材のタネ";
+    }
+
+    showScreen(startScreen);
+  }
+);
