@@ -982,3 +982,19 @@ restartButton.addEventListener(
     showScreen(startScreen);
   }
 );
+libraryButton.addEventListener("click", () => {
+  renderLibrary(materialSeeds);
+  showScreen(libraryScreen);
+});
+
+residentsButton.addEventListener("click", () => {
+  renderLibrary(materialSeeds);
+});
+
+meguriButton.addEventListener("click", () => {
+  renderLibrary(meguriSeeds);
+});
+
+libraryBackButton.addEventListener("click", () => {
+  showScreen(startScreen);
+});
