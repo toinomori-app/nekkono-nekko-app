@@ -384,7 +384,8 @@ const checkScreen =
 
 const resultScreen =
   document.getElementById("result-screen");
-
+const libraryScreen =
+  document.getElementById("library-screen");
 const startButton =
   document.getElementById("start-button");
 
@@ -396,7 +397,20 @@ const nextButton =
 
 const restartButton =
   document.getElementById("restart-button");
+const libraryButton =
+  document.getElementById("library-button");
 
+const residentsButton =
+  document.getElementById("show-residents-button");
+
+const meguriButton =
+  document.getElementById("show-meguri-button");
+
+const libraryContent =
+  document.getElementById("library-content");
+
+const libraryBackButton =
+  document.getElementById("library-back-button");
 const seedNumber =
   document.getElementById("seed-number");
 
