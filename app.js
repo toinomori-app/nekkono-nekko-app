@@ -428,7 +428,37 @@ const questions =
 
 const errorMessage =
   document.getElementById("error-message");
+function renderLibrary(type) {
 
+  let prefix =
+    type === materialSeeds
+      ? "jyuunin"
+      : "meguri";
+
+  let html = "";
+
+  type.forEach((seed, index) => {
+
+    const no =
+      String(index + 1).padStart(2, "0");
+
+    html += `
+      <div class="library-card">
+
+        <img
+          src="images/${prefix}-${no}.png"
+          alt="${seed.title}"
+          loading="lazy"
+        >
+
+      </div>
+    `;
+
+  });
+
+  libraryContent.innerHTML = html;
+
+}
 const resultContent =
   document.getElementById("result-content");
 
