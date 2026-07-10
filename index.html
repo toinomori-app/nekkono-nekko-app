@@ -2,7 +2,12 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>ねっこのねっこ物語</title>
 
   <link rel="stylesheet" href="style.css">
@@ -10,16 +15,100 @@
 
 <body>
 
-  <main>
-    <h1>🌳 ねっこのねっこ物語</h1>
+  <main class="app">
 
-    <p>
-      アプリ開発スタート🌱
-    </p>
+    <section id="start-screen" class="screen active">
 
-    <button>
-      はじめる
-    </button>
+      <p class="small-title">
+        めぐみのねっこ式
+      </p>
+
+      <h1>
+        🌳 ねっこのねっこ物語
+      </h1>
+
+      <h2>
+        わたしの素材タネチェック
+      </h2>
+
+      <p class="intro">
+        今、自然とこんな動きをしているなと思う割合を、
+        ❶〜❺から選んでいきましょう🌱
+      </p>
+
+      <button id="start-button" type="button">
+        チェックをはじめる
+      </button>
+
+    </section>
+
+
+    <section id="check-screen" class="screen">
+
+      <div class="progress-area">
+
+        <p id="seed-number" class="seed-number">
+          素材 ①
+        </p>
+
+        <p id="progress-text" class="progress-text">
+          1 / 10
+        </p>
+
+      </div>
+
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+
+      <h2 id="seed-title">
+        素材①
+      </h2>
+
+      <div id="questions"></div>
+
+      <p id="error-message" class="error-message"></p>
+
+      <div class="navigation">
+
+        <button
+          id="back-button"
+          class="secondary-button"
+          type="button"
+        >
+          前へ
+        </button>
+
+        <button
+          id="next-button"
+          type="button"
+        >
+          次へ
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <section id="result-screen" class="screen">
+
+      <p class="small-title">
+        今の巡りあわせ
+      </p>
+
+      <h2>
+        🌱 今出やすい素材のタネ
+      </h2>
+
+      <div id="result-content"></div>
+
+      <button id="restart-button" type="button">
+        もう一度チェックする
+      </button>
+
+    </section>
+
   </main>
 
   <script src="app.js"></script>
