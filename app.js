@@ -391,7 +391,8 @@ const startButton =
 
 const backButton =
   document.getElementById("back-button");
-
+const libraryTopBackButton =
+  document.getElementById("library-top-back-button");
 const nextButton =
   document.getElementById("next-button");
 
@@ -996,5 +997,8 @@ meguriButton.addEventListener("click", () => {
 });
 
 libraryBackButton.addEventListener("click", () => {
+  showScreen(startScreen);
+});
+libraryTopBackButton.addEventListener("click", () => {
   showScreen(startScreen);
 });
