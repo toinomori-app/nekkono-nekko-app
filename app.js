@@ -369,11 +369,11 @@ let currentPhase = "material";
 let currentSeedIndex = 0;
 
 const materialAnswers = materialSeeds.map((seed) =>
-  Array(seed.items.length).fill(null)
+  Array(seed.items.length).fill(3)
 );
 
 const meguriAnswers = meguriSeeds.map((seed) =>
-  Array(seed.items.length).fill(null)
+  Array(seed.items.length).fill(3)
 );
 
 const startScreen =
