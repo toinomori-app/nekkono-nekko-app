@@ -1,5 +1,6 @@
-const seeds = [
+const materialSeeds = [
   {
+    key: "1",
     number: "①",
     icon: "🌳",
     title: "素材①",
@@ -15,6 +16,7 @@ const seeds = [
     ]
   },
   {
+    key: "2",
     number: "②",
     icon: "🌱",
     title: "素材②",
@@ -30,6 +32,7 @@ const seeds = [
     ]
   },
   {
+    key: "3",
     number: "③",
     icon: "☀️",
     title: "素材③",
@@ -45,6 +48,7 @@ const seeds = [
     ]
   },
   {
+    key: "4",
     number: "④",
     icon: "🕯️",
     title: "素材④",
@@ -60,6 +64,7 @@ const seeds = [
     ]
   },
   {
+    key: "5",
     number: "⑤",
     icon: "⛰️",
     title: "素材⑤",
@@ -75,6 +80,7 @@ const seeds = [
     ]
   },
   {
+    key: "6",
     number: "⑥",
     icon: "🏺",
     title: "素材⑥",
@@ -90,6 +96,7 @@ const seeds = [
     ]
   },
   {
+    key: "7",
     number: "⑦",
     icon: "🗡️",
     title: "素材⑦",
@@ -105,6 +112,7 @@ const seeds = [
     ]
   },
   {
+    key: "8",
     number: "⑧",
     icon: "💎",
     title: "素材⑧",
@@ -120,6 +128,7 @@ const seeds = [
     ]
   },
   {
+    key: "9",
     number: "⑨",
     icon: "🌊",
     title: "素材⑨",
@@ -135,6 +144,7 @@ const seeds = [
     ]
   },
   {
+    key: "10",
     number: "⑩",
     icon: "🌧️",
     title: "素材⑩",
@@ -151,6 +161,169 @@ const seeds = [
   }
 ];
 
+const meguriSeeds = [
+  {
+    key: "i",
+    number: "い",
+    icon: "🌿",
+    title: "巡り い",
+    items: [
+      "自分で確かめている",
+      "自分のペースを大切にしている",
+      "納得して選んでいる",
+      "自分らしさを大切にしている",
+      "まっすぐ向き合っている",
+      "シンプルに考えている",
+      "自分の力を信じている",
+      "自分の信じる正しさを貫いている"
+    ]
+  },
+  {
+    key: "ro",
+    number: "ろ",
+    icon: "🌱",
+    title: "巡り ろ",
+    items: [
+      "人と刺激し合っている",
+      "一人では見えない景色を見ている",
+      "可能性を広げている",
+      "人と一緒に育てている",
+      "切り替えを明確にしている",
+      "横のつながりを楽しんでいる",
+      "仕込みや根回しをしている",
+      "一気にやり遂げている"
+    ]
+  },
+  {
+    key: "ha",
+    number: "は",
+    icon: "🌼",
+    title: "巡り は",
+    items: [
+      "楽しいことを味わっている",
+      "人を喜ばせている",
+      "心地よい空間をつくっている",
+      "気持ちのまま素直に生きている",
+      "感性を共鳴し続けている",
+      "楽しむことを連鎖している",
+      "自然に仲間と集まっている",
+      "好きなものを分かち合っている"
+    ]
+  },
+  {
+    key: "ni",
+    number: "に",
+    icon: "🪄",
+    title: "巡り に",
+    items: [
+      "自分らしく表現している",
+      "本質を大切にしている",
+      "芸術的な美しさを大切にしている",
+      "違和感を才能へ磨いている",
+      "細かなところまで整えている",
+      "言葉にして届けている",
+      "見えない世界を形にしている",
+      "自分も相手も喜ぶものを選んでいる"
+    ]
+  },
+  {
+    key: "ho",
+    number: "ほ",
+    icon: "🫙",
+    title: "巡り ほ",
+    items: [
+      "一つずつ積み重ねている",
+      "安心できる環境を整えている",
+      "信頼関係を軸にしている",
+      "丁寧に向き合っている",
+      "できる方法を見つけている",
+      "目の前の必要なことを見極めている",
+      "無理なく続けられる形をつくっている",
+      "安定した日常を育てている"
+    ]
+  },
+  {
+    key: "he",
+    number: "へ",
+    icon: "🫶",
+    title: "巡り へ",
+    items: [
+      "いろんな人と出会っている",
+      "人の良さや強みを見つけている",
+      "それぞれの心地よさを大切にしている",
+      "人の話を聴いてつなげている",
+      "目的を見据えて経験を増やしている",
+      "新しい世界からヒントを得ている",
+      "人が豊かになるお手伝いをしている",
+      "柔軟に変化を受け入れている"
+    ]
+  },
+  {
+    key: "to",
+    number: "と",
+    icon: "🛡️",
+    title: "巡り と",
+    items: [
+      "責任を持って安心できる場をつくっている",
+      "誠実で在り続けている",
+      "約束を守り安全を確保している",
+      "公平な視点を持っている",
+      "必要な役割を引き受けている",
+      "人の役に立っている",
+      "未来を見据えて準備している",
+      "恩を丁寧に返し筋を通している"
+    ]
+  },
+  {
+    key: "chi",
+    number: "ち",
+    icon: "🚩",
+    title: "巡り ち",
+    items: [
+      "まだ見ぬ可能性を探しに行っている",
+      "自分から一歩踏み出している",
+      "困難にも果敢に挑戦している",
+      "チームを引っ張り最前線に立っている",
+      "自分の信じる未来を実現している",
+      "本能を信じて進んでいる",
+      "行動しながら答えを磨いている",
+      "守りながら背中を押している"
+    ]
+  },
+  {
+    key: "ri",
+    number: "り",
+    icon: "📚",
+    title: "巡り り",
+    items: [
+      "物事の意味を深掘りしている",
+      "点と点をつなげている",
+      "本質を探究している",
+      "学び続けている",
+      "経験を知恵に変えている",
+      "大切なことを次の世代へ残している",
+      "ねっこから納得できる生き方を育てている",
+      "学びを誰かに手渡している"
+    ]
+  },
+  {
+    key: "nu",
+    number: "ぬ",
+    icon: "🔭",
+    title: "巡り ぬ",
+    items: [
+      "まだ知らない世界を覗いている",
+      "新しい視点を面白がりながら見つけている",
+      "好奇心のまま動いている",
+      "常識にとらわれず生きている",
+      "自由な発想を楽しんでいる",
+      "ひらめきを形にしている",
+      "面白いことを角度を変えながら探究している",
+      "今までにない組み合わせを発見している"
+    ]
+  }
+];
+
 const choices = [
   { value: 1, label: "❶", text: "10％以下" },
   { value: 2, label: "❷", text: "10〜30％未満" },
@@ -159,9 +332,14 @@ const choices = [
   { value: 5, label: "❺", text: "70％以上" }
 ];
 
+let currentPhase = "material";
 let currentSeedIndex = 0;
 
-const answers = seeds.map((seed) =>
+const materialAnswers = materialSeeds.map((seed) =>
+  Array(seed.items.length).fill(null)
+);
+
+const meguriAnswers = meguriSeeds.map((seed) =>
   Array(seed.items.length).fill(null)
 );
 
@@ -182,6 +360,18 @@ const questions = document.getElementById("questions");
 const errorMessage = document.getElementById("error-message");
 const resultContent = document.getElementById("result-content");
 
+function getCurrentSeeds() {
+  return currentPhase === "material"
+    ? materialSeeds
+    : meguriSeeds;
+}
+
+function getCurrentAnswers() {
+  return currentPhase === "material"
+    ? materialAnswers
+    : meguriAnswers;
+}
+
 function showScreen(screen) {
   document.querySelectorAll(".screen").forEach((item) => {
     item.classList.remove("active");
@@ -192,21 +382,42 @@ function showScreen(screen) {
 }
 
 function renderSeed() {
+  const seeds = getCurrentSeeds();
+  const answers = getCurrentAnswers();
   const seed = seeds[currentSeedIndex];
 
-  seedNumber.textContent = `素材 ${seed.number}`;
-  seedTitle.textContent = `${seed.icon} ${seed.title}`;
-  progressText.textContent = `${currentSeedIndex + 1} / ${seeds.length}`;
+  const phaseName =
+    currentPhase === "material"
+      ? "素材のタネ"
+      : "巡りのタネ";
+
+  seedNumber.textContent =
+    `${phaseName} ${seed.number}`;
+
+  seedTitle.textContent =
+    `${seed.icon} ${seed.title}`;
+
+  progressText.textContent =
+    `${currentSeedIndex + 1} / ${seeds.length}`;
+
   progressFill.style.width =
     `${((currentSeedIndex + 1) / seeds.length) * 100}%`;
 
   backButton.style.visibility =
-    currentSeedIndex === 0 ? "hidden" : "visible";
+    currentSeedIndex === 0 && currentPhase === "material"
+      ? "hidden"
+      : "visible";
 
-  nextButton.textContent =
-    currentSeedIndex === seeds.length - 1
-      ? "結果を見る"
-      : "次へ";
+  const isLastSeed =
+    currentSeedIndex === seeds.length - 1;
+
+  if (currentPhase === "material" && isLastSeed) {
+    nextButton.textContent = "巡りのチェックへ";
+  } else if (currentPhase === "meguri" && isLastSeed) {
+    nextButton.textContent = "結果を見る";
+  } else {
+    nextButton.textContent = "次へ";
+  }
 
   questions.innerHTML = "";
   errorMessage.textContent = "";
@@ -227,13 +438,18 @@ function renderSeed() {
 
       const input = document.createElement("input");
       input.type = "radio";
-      input.name = `seed-${currentSeedIndex}-question-${questionIndex}`;
+      input.name =
+        `${currentPhase}-${currentSeedIndex}-${questionIndex}`;
       input.value = choice.value;
+
       input.checked =
-        answers[currentSeedIndex][questionIndex] === choice.value;
+        answers[currentSeedIndex][questionIndex] ===
+        choice.value;
 
       input.addEventListener("change", () => {
-        answers[currentSeedIndex][questionIndex] = choice.value;
+        answers[currentSeedIndex][questionIndex] =
+          choice.value;
+
         errorMessage.textContent = "";
       });
 
@@ -256,12 +472,14 @@ function renderSeed() {
 }
 
 function isCurrentSeedComplete() {
+  const answers = getCurrentAnswers();
+
   return answers[currentSeedIndex].every(
     (answer) => answer !== null
   );
 }
 
-function calculateResults() {
+function calculateResults(seeds, answers) {
   return seeds.map((seed, index) => {
     const count4 = answers[index].filter(
       (answer) => answer === 4
@@ -298,24 +516,28 @@ function getWinningSeeds(results) {
   );
 }
 
-function showResults() {
-  const results = calculateResults();
-  const winners = getWinningSeeds(results);
-
+function makeWinnerCards(winners, typeLabel) {
   let html = "";
 
   winners.forEach((winner) => {
     html += `
       <div class="result-card">
-        <h3>${winner.icon} ${winner.title}</h3>
+        <p>${typeLabel}</p>
+        <h3>
+          ${winner.icon}
+          ${winner.title}
+        </h3>
         <p>❹の数：${winner.count4}</p>
         <p>❺の数：${winner.count5}</p>
-        <p>❹と❺の合計：${winner.total}</p>
+        <p>
+          ❹と❺の合計：
+          ${winner.total}
+        </p>
       </div>
     `;
   });
 
-  if (winners.length > 1) {
+  if (winners.length === 2) {
     html += `
       <p class="tie-message">
         どちらのタネも<br>
@@ -324,12 +546,90 @@ function showResults() {
     `;
   }
 
+  if (winners.length >= 3) {
+    html += `
+      <p class="tie-message">
+        いずれのタネも<br>
+        持ち合わせているようです🌱
+      </p>
+    `;
+  }
+
+  return html;
+}
+
+function showResults() {
+  const materialResults = calculateResults(
+    materialSeeds,
+    materialAnswers
+  );
+
+  const meguriResults = calculateResults(
+    meguriSeeds,
+    meguriAnswers
+  );
+
+  const materialWinners =
+    getWinningSeeds(materialResults);
+
+  const meguriWinners =
+    getWinningSeeds(meguriResults);
+
+  const resultHeading =
+    resultScreen.querySelector("h2");
+
+  if (resultHeading) {
+    resultHeading.textContent =
+      "🌱 今の巡りあわせ";
+  }
+
+  let html = `
+    <section class="result-section">
+      <h2>🌳 素材のタネ</h2>
+      ${makeWinnerCards(
+        materialWinners,
+        "今出やすい素材"
+      )}
+    </section>
+
+    <div
+      style="
+        text-align:center;
+        font-size:32px;
+        margin:24px 0;
+      "
+    >
+      ×
+    </div>
+
+    <section class="result-section">
+      <h2>🪽 巡りのタネ</h2>
+      ${makeWinnerCards(
+        meguriWinners,
+        "今出やすい巡り"
+      )}
+    </section>
+
+    <p
+      style="
+        text-align:center;
+        line-height:1.8;
+        margin-top:28px;
+      "
+    >
+      今日のあなたの<br>
+      ねっこを知るヒントにしてね🌱
+    </p>
+  `;
+
   resultContent.innerHTML = html;
   showScreen(resultScreen);
 }
 
 startButton.addEventListener("click", () => {
+  currentPhase = "material";
   currentSeedIndex = 0;
+
   renderSeed();
   showScreen(checkScreen);
 });
@@ -337,6 +637,18 @@ startButton.addEventListener("click", () => {
 backButton.addEventListener("click", () => {
   if (currentSeedIndex > 0) {
     currentSeedIndex -= 1;
+    renderSeed();
+    return;
+  }
+
+  if (
+    currentPhase === "meguri" &&
+    currentSeedIndex === 0
+  ) {
+    currentPhase = "material";
+    currentSeedIndex =
+      materialSeeds.length - 1;
+
     renderSeed();
   }
 });
@@ -348,20 +660,58 @@ nextButton.addEventListener("click", () => {
     return;
   }
 
-  if (currentSeedIndex < seeds.length - 1) {
+  const seeds = getCurrentSeeds();
+  const isLastSeed =
+    currentSeedIndex === seeds.length - 1;
+
+  if (!isLastSeed) {
     currentSeedIndex += 1;
     renderSeed();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  } else {
-    showResults();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+    return;
   }
+
+  if (currentPhase === "material") {
+    currentPhase = "meguri";
+    currentSeedIndex = 0;
+
+    renderSeed();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+    return;
+  }
+
+  showResults();
 });
 
 restartButton.addEventListener("click", () => {
-  answers.forEach((seedAnswers) => {
+  materialAnswers.forEach((seedAnswers) => {
     seedAnswers.fill(null);
   });
 
+  meguriAnswers.forEach((seedAnswers) => {
+    seedAnswers.fill(null);
+  });
+
+  currentPhase = "material";
   currentSeedIndex = 0;
+
+  const resultHeading =
+    resultScreen.querySelector("h2");
+
+  if (resultHeading) {
+    resultHeading.textContent =
+      "🌱 今出やすい素材のタネ";
+  }
+
   showScreen(startScreen);
 });
