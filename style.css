@@ -130,3 +130,73 @@ button{
   padding:24px;
   margin-top:24px;
 }
+.result-section{
+  margin-bottom:24px;
+}
+
+.result-card{
+  background:#fffdf8;
+  border-radius:18px;
+  padding:16px;
+  margin:18px 0;
+  box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.result-label{
+  text-align:center;
+  color:#6a7b5b;
+  font-size:14px;
+}
+
+.result-card h3{
+  text-align:center;
+  color:#4f6247;
+}
+
+.result-card-image{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:14px;
+  margin:14px auto;
+}
+
+.result-cross{
+  text-align:center;
+  font-size:38px;
+  color:#75654d;
+  margin:28px 0;
+}
+
+.score-details{
+  margin-top:14px;
+  padding:12px;
+  background:#f5f0e6;
+  border-radius:12px;
+}
+
+.score-details summary{
+  cursor:pointer;
+  text-align:center;
+  font-weight:bold;
+  color:#627258;
+}
+
+.score-details p{
+  margin:8px 0;
+  text-align:center;
+}
+
+.tie-message{
+  text-align:center;
+  line-height:1.8;
+  font-weight:bold;
+  color:#607554;
+  margin:18px 0 28px;
+}
+
+.result-footer{
+  text-align:center;
+  line-height:1.8;
+  margin-top:32px;
+}
